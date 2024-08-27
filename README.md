@@ -1,0 +1,1 @@
+A Command line program written in Python, allowing users to choose an operation and input values to calculate a result!
