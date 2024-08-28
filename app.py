@@ -1,55 +1,139 @@
 import math
 operations_list = ["Addition", "Subtraction", "Multiplication", "Division", "Modulo", "Raising to a power", "Square root", "Logarithm", "Sine", "Cosine", "Tangent"]
 
-def calculate(user_input, v1, v2):
-  operation = operations_list[user_input]
-  if (operation == "Addition"):
-    return v1 + v2
-  elif (operation == "Subtraction"):
-    return v1 - v2
-  elif (operation == "Multiplication"):
-    return v1 * v2
-  elif (operation == "Division"):
-    return v1 / v2
-  elif (operation == "Modulo"):
-    return v1 % v2
-  elif (operation == "Raising to a power"):
-    return pow(v1, v2)
-  elif (operation == "Square root"):
-    return math.sqrt(v1)
-  elif (operation == "Logarithm"):
-    return math.log(v1)
-  elif (operation == "Sine"):
-    return math.sin(v1)
-  elif (operation == "Cosine"):
-    return math.cos(v1)
-  elif (operation == "Tangent"):
-    return math.tan(v1)
+while True:
+  user_input = print("\nChoose the math operation. \n\n" + "".join(["{} - {}\n".format(idx, ele) for (idx, ele) in enumerate(operations_list)]))
+  user_input = input("Your option from the menu: ")
+  # Addition
+  if user_input == "0":
+    first_value = float(input("\nFirst value: "))
+    second_value = float(input("\nSecond value: "))
+    print("\nThe result is: " + str(first_value + second_value))
 
-def start_main_menu():
-  user_input = input("Choose the math operation. \n\n" + "".join(["{} - {}\n".format(idx, ele) for (idx, ele) in enumerate(operations_list)]) + "\n")
-  if int(user_input) in range(11):
-    first_value = 0
-    second_value = 0
-    if (int(user_input) in range(6)):
-      first_value = float(input("First value: "))
-      second_value = float(input("Second value: "))
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
     else:
-      first_value = float(input("Value: "))
-    result = calculate(int(user_input), v1=first_value, v2=second_value)
+      break
+  # Subtraction
+  elif user_input == "1":
+    first_value = float(input("\nFirst value: "))
+    second_value = float(input("\nSecond value: "))
+    print("\nThe result is: " + str(first_value - second_value))
 
-    print(f"The result is {result}")
+    back = input("\nGo back to the main menu? (y/n) ")
 
-    choice = input("Go back to the main menu? (y/n) ")
-    if (choice == "y"): start_main_menu()
+    if back == "y":
+      continue
+    else:
+      break
+  # Multiplication
+  elif user_input == "2":
+    first_value = float(input("\nFirst value: "))
+    second_value = float(input("\nSecond value: "))
+    print("\nThe result is: " + str(first_value * second_value))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Division
+  elif user_input == "3":
+    first_value = float(input("\nFirst value: "))
+    second_value = float(input("\nSecond value: "))
+    print("\nThe result is: " + str(first_value / second_value))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Modulo
+  elif user_input == "4":
+    first_value = float(input("\nFirst value: "))
+    second_value = float(input("\nSecond value: "))
+    print("\nThe result is: " + str(first_value % second_value))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Raising to a power
+  elif user_input == "5":
+    first_value = float(input("\nFirst value: "))
+    second_value = float(input("\nSecond value: "))
+    print("\nThe result is: " + str(math.pow(first_value, second_value)))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Square root
+  elif user_input == "6":
+    value = float(input("\nEnter value to square root: "))
+    print("\nThe result is: " + str(math.sqrt(value)))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Logarithm
+  elif user_input == "7":
+    value = float(input("\nEnter value for Logarithm (base 2): "))
+    print("\nThe result is: " + str(math.log(value, 2)))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Sine
+  elif user_input == "8":
+    value = float(input("\nEnter value in degrees for sine: "))
+    print("\nThe result is: " + str(math.sin(math.radians(value))))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Cosine
+  elif user_input == "9":
+    value = float(input("\nEnter value in degrees for cosine: "))
+    print("\nThe result is: " + str(math.cos(math.radians(value))))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  # Tangent
+  elif user_input == "10":
+    value = float(input("\nEnter value in degrees for tangent: "))
+    print("\nThe result is: " + str(math.tan(math.radians(value))))
+
+    back = input("\nGo back to the main menu? (y/n) ")
+
+    if back == "y":
+      continue
+    else:
+      break
+  
   else:
-    print("Invalid Option")
-    start_main_menu()
+    print("\nInvalid Option")
+    continue
 
-
-
-start_main_menu()
-
-
-
-
+# End of Program
